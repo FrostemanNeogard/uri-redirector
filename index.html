@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URI Redirector</title>
+  </head>
+  <body>
+    <h1 id="main-header">Loading...</h1>
+
+    <script defer>
+      document.getElementById("main-header").innerHTML = "Redirecting...";
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const steamURL = urlParams.get("steamurl");
+      location.href = steamURL;
+      window.close();
+    </script>
+  </body>
+</html>
