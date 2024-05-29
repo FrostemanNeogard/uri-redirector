@@ -6,15 +6,17 @@
     <title>URI Redirector</title>
   </head>
   <body>
-    <h1 id="main-header">Loading...</h1>
+    <h1 id="main-heading">Loading...</h1>
 
     <script defer>
-      document.getElementById("main-header").innerHTML = "Redirecting...";
+      const mainHeadingElement = document.getElementById("main-heading");
+      mainHeadingElement.innerHTML = "Redirecting...";
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
-      const steamURL = urlParams.get("steamurl");
+      const steamURL = urlParams.get("uri");
       location.href = steamURL;
-      window.close();
+      mainHeadingElement.innerHTML =
+        "Redirect attempt has finished. You may now close this window.";
     </script>
   </body>
 </html>
